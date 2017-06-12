@@ -1,6 +1,10 @@
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 # Bot-Telegram-BeMEAN
 
-Bot, para o Telegram, criado pelo Be MEAN.
+Bot para o Telegram, criado pelo BeMEAN.
+
+Transpilação: [@gkal19](https://www.github.com/gkal19/)
 
 **User: @bemean_oficialbot**
 
