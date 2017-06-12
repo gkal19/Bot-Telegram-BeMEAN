@@ -12,7 +12,7 @@ import fs from 'fs'
 
 const globalLock = process.env.lock
 const _services = services.defs
-const username = process.env.username || '@porrudobot'
+const username = process.env.username || '@bemean_oficialbot'
 const PORT = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT
 const TELEGRAM_TOKEN = process.env.API_TOKEN
 const HOST = process.env.OPENSHIFT_NODEJS_IP || process.env.LOCAL_IP
