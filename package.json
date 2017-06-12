@@ -4,19 +4,23 @@
   "engines": {
     "node": "6.5.0"
   },
-  "description": "Bot para o Teegram do grupo do Be MEAN",
+  "description": "BOT para o Telegram do grupo do BeMEAN atualizado para o ES6.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "babel-node index.js",
     "lint-check": "standard",
     "lint-fix": "standard --fix"
   },
   "keywords": [
     "bot",
     "bemean",
-    "telegram"
+    "telegram",
+    "es6"
   ],
   "repository": "https://github.com/Webschool-io/Bot-Telegram-BeMEAN",
+  "bugs": {
+    "url": "https://github.com/Webschool-io/Bot-Telegram-BeMEAN/issues"
+  },
   "author": "gkal19",
   "license": "ISC",
   "dependencies": {
@@ -38,8 +42,6 @@
     "prettyjson": "^1.2.1",
     "request": "^2.81.0",
     "sewe": "^1.0.0",
-    "babel-cli": "6.24.1",
-    "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
     "babel-istanbul": "0.12.2",
     "babel-plugin-add-module-exports": "0.2.1",
@@ -51,19 +53,16 @@
     "standard": "10.0.2",
     "uglify-js": "3.0.15"
   },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "es2015"
-          ],
-          "plugins": [
-            "add-module-exports"
-          ]
-        }
-      ]
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "describe",
+      "it",
+      "afterEach"
     ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0"
   }
 }
