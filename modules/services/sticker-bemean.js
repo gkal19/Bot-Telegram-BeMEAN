@@ -1,7 +1,5 @@
-'use strict'
-
 const sticker = 'BQADAQADGgADt-CfBCZz7J0kak9nAg'
-const s = require('../settings')
+import s from '../settings';
 
 const execute = (bot, msg) => {
   const reply = { 'reply_to_message_id': msg.message_id }
@@ -10,6 +8,6 @@ const execute = (bot, msg) => {
   })
 }
 
-module.exports = {
+export default {
   execute
-}
+};

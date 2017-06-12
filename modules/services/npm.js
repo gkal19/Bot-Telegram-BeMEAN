@@ -1,8 +1,6 @@
-'use strict'
-
-const url = require('url')
-const https = require('https')
-const cheerioAdv = require('cheerio-advanced-selectors')
+import url from 'url';
+import https from 'https';
+import cheerioAdv from 'cheerio-advanced-selectors';
 const cheerio = cheerioAdv.wrap(require('cheerio'))
 const parse = { 'parse_mode': 'HTML' }
 const execute = (bot, msg) => {
@@ -24,17 +22,18 @@ const execute = (bot, msg) => {
           quickDef: $('.package-description').text(),
           longDef: $('#readme .deep-link').text().substr(0, 300)
         }
-        const _return = 'Segundo o npm : "<i>' + answers.quickDef.replace(/\[[^]]*]/, '') + '</i>". fonte: ' + _url.href
+        const _return = `Segundo o npm : "<i>${answers.quickDef.replace(/\[[^]]*]/, '')}</i>". fonte: ${_url.href}`
         bot.sendMessage(msg.chat.id, _return, parse).catch(console.log)
       } catch (e) {
-        bot.sendMessage(msg.chat.id, 'DEU MERDA: ' + e).catch(console.log)
-        console.log('Erro end: ' + err)
+        bot.sendMessage(msg.chat.id, `DEU MERDA: ${e}`).catch(console.log)
+        console.log(`Erro end: ${err}`)
       }
     })
   })
   req.end()
   req.on('error', (e) => console.error(e))
 }
-module.exports = {
+
+export default {
   execute
-}
+};

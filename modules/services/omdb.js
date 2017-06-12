@@ -1,6 +1,4 @@
-'use strict'
-
-const request = require('request')
+import request from 'request';
 const API_URLS = {
   exact: 'http://www.omdbapi.com/?plot=short&r=json&t=',
   search: 'http://www.omdbapi.com/?plot=short&r=json&s=',
@@ -15,7 +13,7 @@ const MESSAGES = {
 
 const IMDB_URL = 'http://www.imdb.com/title/'
 
-const s = require('../settings')
+import s from '../settings';
 
 const execute = (bot, msg, match, forceSearch, id) => {
   s.get(msg.chat.id, 'search', (err, data) => {
@@ -51,7 +49,7 @@ const _findInfo = (bot, msg, title, forceSearch, id) => {
           _respond(bot, msg, false)
         }
       } else {
-        console.log('Erro: ' + err)
+        console.log(`Erro: ${err}`)
         _respond(bot, msg, false)
       }
     })
@@ -65,7 +63,7 @@ const _findInfo = (bot, msg, title, forceSearch, id) => {
           let _return = {
             count: 1,
             poster: _info.Poster,
-            text: _info.Title + '\n\n' + 'Gênero: ' + _info.Genre + '\n' + 'Tipo: ' + _info.Type + '\n' + 'Lançado em ' + _info.Released + '\n' + 'Sinopse: ' + _info.Plot + '\n' + 'Poster: ' + _info.Poster,
+            text: `${_info.Title}\n\nGênero: ${_info.Genre}\nTipo: ${_info.Type}\nLançado em ${_info.Released}\nSinopse: ${_info.Plot}\nPoster: ${_info.Poster}`,
             imdb_link: IMDB_URL + _info.imdbID
           }
           _respond(bot, msg, _return)
@@ -73,7 +71,7 @@ const _findInfo = (bot, msg, title, forceSearch, id) => {
           _runSearch(bot, msg, title, false)
         }
       } else {
-        console.log('Erro: ' + err)
+        console.log(`Erro: ${err}`)
         _respond(bot, msg, false)
       }
     })
@@ -105,7 +103,7 @@ const _respond = (bot, msg, info, force) => {
   }
 }
 
-module.exports = {
+export default {
   execute,
   _findInfo
-}
+};

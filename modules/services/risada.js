@@ -1,7 +1,5 @@
-'use strict'
-
-const treta = require('../db/treta')
-const monitutils = require('../utils/monitutils')
+import treta from '../db/treta';
+import monitutils from '../utils/monitutils';
 
 const limite = 3
 const risadas = [
@@ -12,7 +10,7 @@ const risadas = [
   'ri litros ahuah'
 ]
 
-const s = require('../settings')
+import s from '../settings';
 
 let contadores = []
 
@@ -34,13 +32,13 @@ const _execute = (bot, msg) => {
   } else if (contagem < limite) {
     contadores[msg.chat.id]++
   }
-  if (msg.type !== 'private' && msg.text.indexOf(' ') >= 0) {
+  if (msg.type !== 'private' && msg.text.includes(' ')) {
     treta.insert({ message: msg.text, group: msg.chat.id }, (err, data) => {
       if (err) monitutils.notifyAdmins(bot, `Erro ao salvar mensagem no banco: ${JSON.stringify(err)}`)
     })
   }
 }
 
-module.exports = {
+export default {
   execute
-}
+};

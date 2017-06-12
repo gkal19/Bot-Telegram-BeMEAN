@@ -1,12 +1,15 @@
-'use strict'
-
 const answers = [
   'Welcome to the jungle, baby!',
   'Bem vindo ao Inferno!',
-  'Não quer entrar para tomar uma chícara de café?'
+  'Não quer entrar para tomar uma chícara de café?',
+  'Welcome, bitch :P',
+  'Aooooooooo fio! Bem vindo :D',
+  'Eaeeeeeeeeeee xD',
+  'Olaaaar ^^',	
+  'Ih, alá, chegou mais um! Bem vindo :D'
 ]
 
-const s = require('../settings')
+import s from '../settings';
 
 const execute = (bot, msg) => {
   s.get(msg.chat.id, 'funny', (err, data) => {
@@ -18,6 +21,6 @@ const _execute = (bot, msg) => {
   bot.sendMessage(msg.chat.id, answers[Math.floor(Math.random() * answers.length)]).catch(console.log)
 }
 
-module.exports = {
+export default {
   execute
-}
+};

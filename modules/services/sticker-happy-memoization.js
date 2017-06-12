@@ -1,5 +1,3 @@
-'use strict'
-
 const stickers = [
   'BQADAgADwQEAAhlgSwTFGD3TrpTVcAI',
   'BQADAgADfwEAAksODwABX50lGXzKqSsC',
@@ -7,7 +5,7 @@ const stickers = [
   'BQADAgADgwEAAksODwABss0TWyMJO_YC'
 ]
 
-const s = require('../settings')
+import s from '../settings';
 
 let counter = 0
 let memoization = []
@@ -39,6 +37,6 @@ const execute = (bot, msg) => {
   })
 }
 
-module.exports = {
+export default {
   execute
-}
+};

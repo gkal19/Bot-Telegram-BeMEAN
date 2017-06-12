@@ -1,22 +1,20 @@
-'use strict'
-
-const GoogleMapsAPI = require('googlemaps')
+import GoogleMapsAPI from 'googlemaps';
 const config = {
   key: 'AIzaSyBnsCuuS0N0Akc1I3WEifbNoBCQ1iZ4a9g', // Não tente usar a chave, ela só aceita requests do meu server =)
   secure: true
 }
 const api = new GoogleMapsAPI(config)
-const monitutils = require('../utils/monitutils')
+import monitutils from '../utils/monitutils';
 
 const localeNotFound = (bot, msg, query, result) => {
   bot.sendMessage(msg.chat.id, 'Então... Tem certeza que esse lugar existe? Pq procurei ele no Google Maps, e não achei, não :/').catch(console.log)
 }
 
-const s = require('../settings')
+import s from '../settings';
 
 const _execute = (bot, msg) => {
   let reverseParams = {
-    'latlng': msg.location.latitude + ',' + msg.location.longitude,
+    'latlng': `${msg.location.latitude},${msg.location.longitude}`,
     'language': 'pt-BR',
     'location_type': 'APPROXIMATE'
   }
@@ -24,7 +22,7 @@ const _execute = (bot, msg) => {
   api.reverseGeocode(reverseParams, (err, result) => {
     if (err) {
       bot.sendMessage(msg.chat.id, errMsg).catch(console.log)
-      monitutils.notifySharedAccount(bot, 'Erro no service do whereami:\nerr: `' + JSON.stringify(err) + '`')
+      monitutils.notifySharedAccount(bot, `Erro no service do whereami:\nerr: \`${JSON.stringify(err)}\``)
       return
     }
 
@@ -46,7 +44,7 @@ const _execute = (bot, msg) => {
       let info = result.results[0]
       let name = info.formatted_address
 
-      bot.sendMessage(msg.chat.id, 'Segundo o Google Maps, você está nesse endereço: `' + name + '`', { 'parse_mode': 'Markdown' }).catch(console.log)
+      bot.sendMessage(msg.chat.id, `Segundo o Google Maps, você está nesse endereço: \`${name}\``, { 'parse_mode': 'Markdown' }).catch(console.log)
     }
   })
 }
@@ -57,6 +55,6 @@ const execute = (bot, msg) => {
   })
 }
 
-module.exports = {
+export default {
   execute
-}
+};

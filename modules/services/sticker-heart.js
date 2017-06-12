@@ -1,6 +1,4 @@
-'use strict'
-
-const s = require('../settings')
+import s from '../settings';
 
 const stickers = [
   'BQADAgADVgADGgZFBFCh0QP4JfyUAg',
@@ -20,6 +18,6 @@ const execute = (bot, msg) => {
   })
 }
 
-module.exports = {
+export default {
   execute
-}
+};

@@ -1,9 +1,8 @@
-'use strict'
-
 // Requires
-const request = require('request')
-const duckduckgo = require('./duckduckgo')
-const cheerioAdv = require('cheerio-advanced-selectors')
+import request from 'request';
+
+import duckduckgo from './duckduckgo';
+import cheerioAdv from 'cheerio-advanced-selectors';
 const cheerio = cheerioAdv.wrap(require('cheerio'))
 
 // Strings
@@ -49,8 +48,8 @@ const parseResponse = (err, res, html, args, bot, msg, _url) => {
           'link': $('.main-content h3.repo-list-name').text()
         }
 
-        var answer = answers.quickDef
-        const _return = 'Via Github: "' + answer.replace(/\[[^]]*]/, '') + '". fonte: ' + _url
+        const answer = answers.quickDef;
+        const _return = `Via Github: "${answer.replace(/\[[^]]*]/, '')}". fonte: ${_url}`
 
         bot.sendMessage(msg.chat.id, _return, pm).catch(console.log)
         break
@@ -65,17 +64,17 @@ const parseResponse = (err, res, html, args, bot, msg, _url) => {
   }
 }
 
-var execute = (bot, msg, args) => {
+const execute = (bot, msg, args) => {
   try {
-    const _url = 'https://pt.wikipedia.org/w/index.php?title=' + args.query.replace(' ', '_')
+    const _url = `https://pt.wikipedia.org/w/index.php?title=${args.query.replace(' ', '_')}`
     request(_url, (err, res, html) => {
       parseResponse(err, res, html, args, bot, msg, _url)
     })
   } catch (e) {
     bot.sendMessage(msg.chat.id, messages.communicationError.replace('%e%', e), pm).catch(console.log)
   }
-}
+};
 
-module.exports = {
+export default {
   execute
-}
+};

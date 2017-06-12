@@ -1,9 +1,8 @@
-'use strict'
-
 // Requires
-const request = require('request')
-const duckduckgo = require('./duckduckgo')
-const cheerioAdv = require('cheerio-advanced-selectors')
+import request from 'request';
+
+import duckduckgo from './duckduckgo';
+import cheerioAdv from 'cheerio-advanced-selectors';
 const cheerio = cheerioAdv.wrap(require('cheerio'))
 
 // Strings
@@ -17,7 +16,7 @@ const messages = {
   communicationError: 'Putz, não tô conseguindo conversar com a Wikipedia :/ Tenta depois `%e%`'
 }
 
-const s = require('../settings')
+import s from '../settings';
 
 // Realiza o parse de uma response vinda do request
 const parseResponse = (err, res, html, args, bot, msg, _url) => {
@@ -30,10 +29,10 @@ const parseResponse = (err, res, html, args, bot, msg, _url) => {
           longDef: $('#bodyContent #mw-content-text p').not('.coordinates').text().substr(0, 300)
         }
 
-        var answer = answers.quickDef
+        let answer = answers.quickDef;
 
         answer = (answer == '') ? answers.longDef : answer
-        const _return = 'Segundo a Wikipédia: "<i>' + answer.replace(/\[[^]]*]/, '') + '</i>". fonte: ' + _url
+        const _return = `Segundo a Wikipédia: "<i>${answer.replace(/\[[^]]*]/, '')}</i>". fonte: ${_url}`
 
         bot.sendMessage(msg.chat.id, _return, ph).catch(console.log)
         break
@@ -48,7 +47,7 @@ const parseResponse = (err, res, html, args, bot, msg, _url) => {
   }
 }
 
-var _execute = (bot, msg, args) => {
+const _execute = (bot, msg, args) => {
   if (args.query.toLowerCase() == 'o seu criador') {
     console.log('quem é o seu criador')
     s.get(msg.chat.id, 'stickers', (err, data) => {
@@ -57,7 +56,7 @@ var _execute = (bot, msg, args) => {
     })
   } else {
     try {
-      const _url = 'https://pt.wikipedia.org/w/index.php?title=' + args.query.toLowerCase().split(' ').join('_')
+      const _url = `https://pt.wikipedia.org/w/index.php?title=${args.query.toLowerCase().split(' ').join('_')}`
       request(_url, (err, res, html) => {
         parseResponse(err, res, html, args, bot, msg, _url)
       })
@@ -65,7 +64,7 @@ var _execute = (bot, msg, args) => {
       bot.sendMessage(msg.chat.id, messages.communicationError.replace('%e%', e), pm).catch(console.log)
     }
   }
-}
+};
 
 const execute = (bot, msg, args) => {
   s.get(msg.chat.id, 'search', (err, data) => {
@@ -73,6 +72,6 @@ const execute = (bot, msg, args) => {
   })
 }
 
-module.exports = {
+export default {
   execute
-}
+};

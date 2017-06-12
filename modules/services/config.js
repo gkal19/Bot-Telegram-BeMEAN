@@ -1,7 +1,5 @@
-'use strict'
-
-const s = require('../settings')
-const mu = require('../utils/monitutils')
+import s from '../settings';
+import mu from '../utils/monitutils';
 
 const isValidValue = (config, value) => {
   return (config in s.configs && (s.configs[config].vals.filter((v) => { return value == v }).length > 0))
@@ -11,25 +9,25 @@ const getAvailableConfigs = () => {
   let result = ''
   for (let c in s.configs) {
     if (!s.configs[c].adminOnly) {
-      result += '*' + c + ':*\n'
+      result += `*${c}:*\n`
       result += 'Valores:'
       s.configs[c].vals.forEach((v) => {
-        result += ' `' + v + '`,'
+        result += ` \`${v}\`,`
       })
       result = result.slice(0, -1)
-      result += '\nPadrão: `' + s.configs[c].default + '`\n\n'
+      result += `\nPadrão: \`${s.configs[c].default}\`\n\n`
     }
   }
   return result
 }
 
 const configNotFound = (bot, msg) => {
-  bot.sendMessage(msg.chat.id, 'Acho que você não entendeu o esquema. A sintaxe correta é: `config [nome da config] (valor|clear)`\n\nConfigs disponíveis:\n' + getAvailableConfigs(), { 'parse_mode': 'Markdown' })
+  bot.sendMessage(msg.chat.id, `Acho que você não entendeu o esquema. A sintaxe correta é: \`config [nome da config] (valor|clear)\`\n\nConfigs disponíveis:\n${getAvailableConfigs()}`, { 'parse_mode': 'Markdown' })
 }
 
 const sendError = (bot, msg, err, data) => {
   bot.sendMessage(msg.chat.id, 'Erro ao redefinir a config')
-  mu.notifySharedAccount(bot, 'Erro no módulo config: `' + JSON.stringify(err || data) + '`')
+  mu.notifySharedAccount(bot, `Erro no módulo config: \`${JSON.stringify(err || data)}\``)
 }
 
 const execute = (bot, msg, match) => {
@@ -40,7 +38,7 @@ const execute = (bot, msg, match) => {
           if (s.configs[match[1]].global) {
             s.clearGlobal(match[1], (err, data) => {
               if (data.result.ok && !err) {
-                bot.sendMessage(msg.chat.id, 'Config `' + match[1] + '` redefinida', { parse_mode: 'Markdown' })
+                bot.sendMessage(msg.chat.id, `Config \`${match[1]}\` redefinida`, { parse_mode: 'Markdown' })
               } else {
                 sendError(bot, msg, err, data)
               }
@@ -48,7 +46,7 @@ const execute = (bot, msg, match) => {
           } else {
             s.clear(msg.chat.id, match[1], (err, data) => {
               if (data.result.ok && !err) {
-                bot.sendMessage(msg.chat.id, 'Config `' + match[1] + '` redefinida', { parse_mode: 'Markdown' })
+                bot.sendMessage(msg.chat.id, `Config \`${match[1]}\` redefinida`, { parse_mode: 'Markdown' })
               } else {
                 sendError(bot, msg, err, data)
               }
@@ -79,7 +77,7 @@ const execute = (bot, msg, match) => {
                 sendError(bot, msg, err, data)
               } else {
                 if (data.key == match[1]) {
-                  bot.sendMessage(msg.chat.id, 'Config `' + match[1] + '` definida para `' + match[2] + '`', { parse_mode: 'Markdown' })
+                  bot.sendMessage(msg.chat.id, `Config \`${match[1]}\` definida para \`${match[2]}\``, { parse_mode: 'Markdown' })
                 }
               }
             })
@@ -106,7 +104,7 @@ const execute = (bot, msg, match) => {
           if (err) {
             sendError(bot, msg, err, data)
           } else {
-            bot.sendMessage(msg.chat.id, 'Valor da config `' + match[1] + '`: `' + data + '`', { parse_mode: 'Markdown' })
+            bot.sendMessage(msg.chat.id, `Valor da config \`${match[1]}\`: \`${data}\``, { parse_mode: 'Markdown' })
           }
         })
       } else {
@@ -114,7 +112,7 @@ const execute = (bot, msg, match) => {
           if (err) {
             sendError(bot, msg, err, data)
           } else {
-            bot.sendMessage(msg.chat.id, 'Valor da config `' + match[1] + '`: `' + data + '`', { parse_mode: 'Markdown' })
+            bot.sendMessage(msg.chat.id, `Valor da config \`${match[1]}\`: \`${data}\``, { parse_mode: 'Markdown' })
           }
         })
       }
@@ -124,6 +122,6 @@ const execute = (bot, msg, match) => {
   }
 }
 
-module.exports = {
+export default {
   execute
-}
+};

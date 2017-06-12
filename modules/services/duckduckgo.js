@@ -1,9 +1,6 @@
-'use strict'
-
-const s = require('../settings')
-
-const url = require('url')
-const http = require('http')
+import s from '../settings';
+import url from 'url';
+import http from 'http';
 const parse = { 'parse_mode': 'HTML' }
 const stickers = [
   'BQADBAADMgEAAl6A9AWiXNcdh4N2fgI',
@@ -33,9 +30,9 @@ const execute = (bot, msg, match) => {
       try {
         data = JSON.parse(data)
         if (data.AbstractText !== '') {
-          const _return = 'Achei isso no DuckDuckGo: <i>' + data.AbstractText + '</i> Saiba mais em ' + data.AbstractURL
+          const _return = `Achei isso no DuckDuckGo: <i>${data.AbstractText}</i> Saiba mais em ${data.AbstractURL}`
           bot.sendMessage(msg.chat.id, _return, parse).catch(console.log)
-          console.log('data): ' + data)
+          console.log(`data): ${data}`)
         } else {
           const sticker = stickers[Math.floor(Math.random() * stickers.length)]
           const _return = '<b>Não achei nada jovem!</b> Sorry mesmo, mas você pode fumar um pra relaxar.'
@@ -45,14 +42,15 @@ const execute = (bot, msg, match) => {
           })
         }
       } catch (e) {
-        bot.sendMessage(msg.chat.id, 'DEU MERDA: ' + e).catch(console.log)
-        console.log('Erro end: ' + err)
+        bot.sendMessage(msg.chat.id, `DEU MERDA: ${e}`).catch(console.log)
+        console.log(`Erro end: ${err}`)
       }
     })
   })
   req.end()
   req.on('error', (e) => console.error(e))
 }
-module.exports = {
+
+export default {
   execute
-}
+};

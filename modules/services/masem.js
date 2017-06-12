@@ -1,5 +1,3 @@
-'use strict'
-
 const answers = [
   'Mas em?!',
   'Eu num intindi o quei falô',
@@ -20,6 +18,6 @@ const execute = (bot, msg) => {
   bot.sendMessage(msg.chat.id, answers[Math.floor(Math.random() * answers.length)]).catch(console.log)
 }
 
-module.exports = {
+export default {
   execute
-}
+};

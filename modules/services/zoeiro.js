@@ -1,5 +1,3 @@
-'use strict'
-
 const answers = [
   '\'Cause the zoeira, jovem, the zoeira NEVER ends hu3hu3hu3hu3hu3',
   'hu3hu3hu3hu3hu3hu3hu3hu3hu3hu3hu3hu3hu3hu3hu3',
@@ -19,7 +17,7 @@ const stickers = [
   'BQADAQAD0wADREz9A2AB4VDafSQNAg'
 ]
 
-const s = require('../settings')
+import s from '../settings';
 
 const execute = (bot, msg) => {
   s.get(msg.chat.id, 'funny', (err, data) => {
@@ -34,6 +32,6 @@ const _execute = (bot, msg) => {
   })
 }
 
-module.exports = {
+export default {
   execute
-}
+};
