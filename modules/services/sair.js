@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const answers = [
   'Saiu porque não aguentou a pressão!',
@@ -8,20 +8,20 @@ const answers = [
   'Que a força esteja com você!',
   'Hasta la vista, baby!',
   'Pede pra sair, 01!'
-];
+]
 
-const s = require('../settings');
+const s = require('../settings')
 
 const execute = (bot, msg) => {
   s.get(msg.chat.id, 'funny', (err, data) => {
-    if (data == 'true') _execute(bot, msg);
-  });
+    if (data == 'true') _execute(bot, msg)
+  })
 }
 
 const _execute = (bot, msg) => {
-  bot.sendMessage(msg.chat.id, answers[Math.floor(Math.random() * answers.length)]).catch(console.log);
-};
+  bot.sendMessage(msg.chat.id, answers[Math.floor(Math.random() * answers.length)]).catch(console.log)
+}
 
 module.exports = {
   execute
-};
+}

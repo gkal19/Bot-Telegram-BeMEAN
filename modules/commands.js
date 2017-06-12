@@ -1,22 +1,22 @@
-"use strict";
+'use strict'
 
-import echo from "./commands/echo";
-import ping from "./commands/ping";
-import id from "./commands/id";
-import start from "./commands/start";
-import webschool from "./commands/webschool";
-import help from "./commands/help";
-import par from "./commands/par";
-import impar from "./commands/impar";
-import repo from "./commands/repo";
-import sendsticker from "./commands/sendsticker";
-import log from "./commands/log";
-import userstats from "./commands/userstats";
-import whitelist from "./commands/whitelist";
-import example from "./commands/example";
-import broadcast from "./commands/broadcast";
-import say from "./commands/say";
-import math from "./commands/math";
+import echo from './commands/echo'
+import ping from './commands/ping'
+import id from './commands/id'
+import start from './commands/start'
+import webschool from './commands/webschool'
+import help from './commands/help'
+import par from './commands/par'
+import impar from './commands/impar'
+import repo from './commands/repo'
+import sendsticker from './commands/sendsticker'
+import log from './commands/log'
+import userstats from './commands/userstats'
+import whitelist from './commands/whitelist'
+import example from './commands/example'
+import broadcast from './commands/broadcast'
+import say from './commands/say'
+import math from './commands/math'
 
 export default {
   echo,
@@ -35,10 +35,9 @@ export default {
   broadcast,
   say,
   math
-};
+}
 
-
-/*const echo = require("./commands/echo");
+/* const echo = require("./commands/echo");
 const ping = require("./commands/ping");
 const id = require("./commands/id");
 const start = require("./commands/start");
@@ -73,4 +72,4 @@ module.exports = {
   broadcast,
   say,
   math
-};*/
+}; */
