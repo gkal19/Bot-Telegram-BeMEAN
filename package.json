@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint-check": "standard",
+    "lint-fix": "standard --fix"
   },
   "keywords": [
     "bot",
@@ -49,5 +50,20 @@
     "nock": "9.0.13",
     "standard": "10.0.2",
     "uglify-js": "3.0.15"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ],
+          "plugins": [
+            "add-module-exports"
+          ]
+        }
+      ]
+    ]
   }
 }
