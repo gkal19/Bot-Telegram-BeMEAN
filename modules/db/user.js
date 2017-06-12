@@ -1,6 +1,4 @@
-'use strict'
-
-const mongoose = require('mongoose')
+import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema
 // Criação do Schema
@@ -49,4 +47,4 @@ const Controller = {
   }
 }
 
-module.exports = Controller
+export default Controller;

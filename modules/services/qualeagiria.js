@@ -15,7 +15,7 @@ import wikipedia from './wikipedia';
 const parseResponse = (err, res, html, args, bot, msg) => {
   let answer
   if (!err) {
-    let results = JSON.parse(html)
+    const results = JSON.parse(html)
 
     if (Array.isArray(results) && results.length > 0) {
       answer = results[0]

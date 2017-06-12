@@ -3,7 +3,7 @@ import userutils from './utils/userutils';
 import monitutils from './utils/monitutils';
 
 /* const isSecure = (msg, isEval, cbk) => {
-  let secure = true;
+  const secure = true;
   if (!monitutils.isAdmin(msg.chat.id)) {
     userutils.isUserBlacklisted(msg.from.id, (err, data) => {
       if (err) secure = false;

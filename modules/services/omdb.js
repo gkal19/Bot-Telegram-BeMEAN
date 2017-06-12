@@ -35,9 +35,9 @@ const _findInfo = (bot, msg, title, forceSearch, id) => {
   const _runSearch = (bot, msg, title, force) => {
     request(API_URLS.search + encodeURIComponent(title), (err, res, content) => {
       if (!err) {
-        let _info = JSON.parse(content)
+        const _info = JSON.parse(content)
         if (_info.Response !== 'False') {
-          let _return = {
+          const _return = {
             count: _info.totalResults,
             results: []
           }
@@ -58,9 +58,9 @@ const _findInfo = (bot, msg, title, forceSearch, id) => {
   if (!forceSearch) {
     request(id ? API_URLS.with_id + id : API_URLS.exact + encodeURIComponent(title), (err, res, content) => {
       if (!err) {
-        let _info = JSON.parse(content)
+        const _info = JSON.parse(content)
         if (_info.Response !== 'False') {
-          let _return = {
+          const _return = {
             count: 1,
             poster: _info.Poster,
             text: `${_info.Title}\n\nGênero: ${_info.Genre}\nTipo: ${_info.Type}\nLançado em ${_info.Released}\nSinopse: ${_info.Plot}\nPoster: ${_info.Poster}`,

@@ -29,7 +29,7 @@ const testMemoization = (stckr) => {
 const _rand = (stickers) => Math.floor(Math.random() * stickers.length)
 
 const execute = (bot, msg) => {
-  let stckr = testMemoization(_rand(stickers))
+  const stckr = testMemoization(_rand(stickers))
   console.log('execute stckr', stckr)
   const reply = { 'reply_to_message_id': msg.message_id }
   s.get(msg.chat.id, 'stickers', (err, data) => {

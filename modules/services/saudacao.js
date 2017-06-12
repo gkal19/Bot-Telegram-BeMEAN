@@ -8,11 +8,11 @@ import s from '../settings';
 const execute = (bot, msg, match) => {
   s.get(msg.chat.id, 'greetings', (err, data) => {
     if (data == 'true') {
-      let date = new Date()
-      let _horas = date.getUTCHours() - 3
-      let horas = _horas < 0 ? _horas + 24 : _horas
+      const date = new Date()
+      const _horas = date.getUTCHours() - 3
+      const horas = _horas < 0 ? _horas + 24 : _horas
       let minutos = date.getMinutes()
-      let ending = match[1].toLowerCase()
+      const ending = match[1].toLowerCase()
       minutos = minutos < 10 ? `0${minutos}` : minutos
       const pu = match[2]
       let pr = ''

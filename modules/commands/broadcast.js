@@ -11,8 +11,8 @@ const sendUse = (bot, msg) => {
 const execute = (msg, match, bot) => {
   if (monitutils.isAdmin(msg.from.id)) {
     if (match[2]) {
-      let dest = match[2]
-      let ids = []
+      const dest = match[2]
+      const ids = []
       switch (dest) {
         case 'users':
           fillUsers((ids) => {
@@ -46,8 +46,8 @@ const execute = (msg, match, bot) => {
 const doBroadcast = (ids, bot, msg) => {
   if (Array.isArray(ids)) {
     if (msg.reply_to_message) {
-      let tfw = msg.reply_to_message;
-      let sent = [];
+      const tfw = msg.reply_to_message;
+      const sent = [];
       bot.sendMessage(msg.chat.id, `Enviando mensagem para: ${ids.length} conversas`).catch(console.log)
                 .then(() => {
                   ids.forEach((id) => {
@@ -69,7 +69,7 @@ const doBroadcast = (ids, bot, msg) => {
 
 const fillUsers = (cbk) => {
   userutils.getUsers((err, data) => {
-    let users = []
+    const users = []
     data.forEach((el) => {
       if (el._id) users.push(el._id)
     })

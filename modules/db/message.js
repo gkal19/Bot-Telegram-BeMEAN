@@ -1,8 +1,6 @@
-'use strict'
-
-const mongoose = require('mongoose')
-const moment = require('moment')
-const pj = require('prettyjson')
+import mongoose from 'mongoose';
+import moment from 'moment';
+import pj from 'prettyjson';
 
 const Schema = mongoose.Schema
 // Criação do Schema
@@ -61,4 +59,4 @@ const Controller = {
   }
 }
 
-module.exports = Controller
+export default Controller;

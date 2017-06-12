@@ -23,7 +23,7 @@ const setGlobal = (key, value, cbk) => {
     key
   }, (err, data) => {
     if (data.length > 0) {
-      let curSet = data[0]
+      const curSet = data[0]
       curSet.value = value
       curSet.save(cbk)
     } else {
@@ -44,7 +44,7 @@ const set = (chat_id, key, value, cbk) => {
     key
   }, (err, data) => {
     if (data.length > 0) {
-      let curSet = data[0]
+      const curSet = data[0]
       curSet.value = value
       curSet.save(cbk)
     } else {
@@ -102,7 +102,7 @@ const get = (chat_id, key, cbk) => {
 
 const clearGlobal = (key, cbk) => {
   cbk = cbk || callback
-  let q = {
+  const q = {
     key
   }
 
@@ -111,7 +111,7 @@ const clearGlobal = (key, cbk) => {
 
 const clear = (chat_id, key, cbk) => {
   cbk = cbk || callback
-  let q = {
+  const q = {
     chat_id
   }
   if (key) q.key = key

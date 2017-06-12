@@ -2,7 +2,7 @@ import userutils from '../utils/userutils';
 import monitutils from '../utils/monitutils';
 
 const execute = (msg, match, bot) => {
-  let user_id = msg.reply_to_message.from.id
+  const user_id = msg.reply_to_message.from.id
   if (!user_id) bot.sendMessage(msg.chat.id, 'Ué, quer liberar quem, fio?').catch(console.log)
   else {
     if (monitutils.isAdmin(msg.from.id)) {

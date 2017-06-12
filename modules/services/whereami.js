@@ -13,7 +13,7 @@ const localeNotFound = (bot, msg, query, result) => {
 import s from '../settings';
 
 const _execute = (bot, msg) => {
-  let reverseParams = {
+  const reverseParams = {
     'latlng': `${msg.location.latitude},${msg.location.longitude}`,
     'language': 'pt-BR',
     'location_type': 'APPROXIMATE'
@@ -41,8 +41,8 @@ const _execute = (bot, msg) => {
     }
 
     if (result.results[0]) {
-      let info = result.results[0]
-      let name = info.formatted_address
+      const info = result.results[0]
+      const name = info.formatted_address
 
       bot.sendMessage(msg.chat.id, `Segundo o Google Maps, você está nesse endereço: \`${name}\``, { 'parse_mode': 'Markdown' }).catch(console.log)
     }

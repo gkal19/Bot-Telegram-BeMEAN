@@ -12,7 +12,7 @@ const saveUser = (user, cbk) => {
   }, (err, data) => {
     if (err) cbk(err, null)
     else if (data.length > 0) {
-      let u = data[0]
+      const u = data[0]
       u.blacklisted = user.blacklisted
       u.save(cbk)
     } else {
@@ -61,7 +61,7 @@ const blacklistUser = (userId, reason, cbk) => {
   }, (err, data) => {
     if (err) cbk(err, null)
     else if (data.length > 0) {
-      let u = data[0]
+      const u = data[0]
       u.blacklisted.status = true
       u.blacklisted.reason = reason
       u.save(cbk)
@@ -82,7 +82,7 @@ const whiteListUser = (userId, cbk) => {
   getUser(userId, (err, data) => {
     if (err) cbk(err, null)
     else if (data.length > 0) {
-      let u = data[0]
+      const u = data[0]
       u.blacklisted = {
         status: false
       }

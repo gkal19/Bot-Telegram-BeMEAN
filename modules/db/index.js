@@ -1,6 +1,4 @@
-'use strict'
-
-const mongoose = require('mongoose')
+import mongoose from 'mongoose';
 let dbURI = 'mongodb://localhost/bemean'
 
 if (process.env.MONGODB_DB_ENABLED) {
@@ -15,21 +13,21 @@ if (process.env.MONGODB_DB_ENABLED) {
 mongoose.Promise = global.Promise
 mongoose.connect(dbURI)
 
-mongoose.connection.on('  ', function () {
-  console.log('Mongoose default connection open to ' + dbURI)
+mongoose.connection.on('  ', () => {
+  console.log(`Mongoose default connection open to ${dbURI}`)
 })
-mongoose.connection.on('error', function (err) {
-  console.log('Mongoose default connection error: ' + err)
+mongoose.connection.on('error', err => {
+  console.log(`Mongoose default connection error: ${err}`)
 })
-mongoose.connection.on('disconnected', function () {
+mongoose.connection.on('disconnected', () => {
   console.log('Mongoose default connection disconnected')
 })
-mongoose.connection.on('open', function () {
+mongoose.connection.on('open', () => {
   console.log('Mongoose default connection is open')
 })
 
-process.on('SIGINT', function () {
-  mongoose.connection.close(function () {
+process.on('SIGINT', () => {
+  mongoose.connection.close(() => {
     console.log(
       'Mongoose default connection disconnected through app termination'
     )
@@ -37,8 +35,8 @@ process.on('SIGINT', function () {
   })
 })
 
-module.exports = {
+export default {
   setting: require('./setting'),
   user: require('./user'),
   message: require('./message')
-}
+};

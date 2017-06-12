@@ -18,7 +18,7 @@ import s from '../settings';
 const _execute = (bot, msg, match) => {
   if (match[3]) {
     const query = match[3].replace(/["'!?]/g, '')
-    let geocodeParams = {
+    const geocodeParams = {
       'address': query
     }
 
@@ -44,10 +44,8 @@ const _execute = (bot, msg, match) => {
       }
 
       if (result.results[0]) {
-        let info = result.results[0]
-        let name;
-        let lat;
-        let lng;
+        const info = result.results[0]
+        let name, lat, lng;
 
         name = info.formatted_address
         lat = info.geometry.location.lat
