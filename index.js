@@ -56,8 +56,7 @@ bot
 
 const takeOff = () => {
   // Handling previous crash
-  let crashdata
-  let processing
+  let crashdata, processing
 
   if (fs.existsSync('./.crash')) {
     let _data = JSON.parse(fs.readFileSync('./.crash'))
