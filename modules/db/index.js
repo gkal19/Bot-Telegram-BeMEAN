@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 let dbURI = 'mongodb://localhost/bemean'
 
 if (process.env.MONGODB_DB_ENABLED) {
@@ -39,4 +39,4 @@ export default {
   setting: require('./setting'),
   user: require('./user'),
   message: require('./message')
-};
+}

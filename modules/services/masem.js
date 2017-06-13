@@ -20,4 +20,4 @@ const execute = (bot, msg) => {
 
 export default {
   execute
-};
+}

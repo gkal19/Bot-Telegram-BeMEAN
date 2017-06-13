@@ -2,7 +2,7 @@ const stickers = [
   'BQADBAADuRYAAvEGNAbXUwABQaBhbw4C'
 ]
 
-import s from '../settings';
+import s from '../settings'
 
 const execute = (bot, msg) => {
   const sticker = stickers[Math.floor(Math.random() * stickers.length)]
@@ -14,4 +14,4 @@ const execute = (bot, msg) => {
 
 export default {
   execute
-};
+}

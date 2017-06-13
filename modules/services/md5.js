@@ -1,5 +1,5 @@
-import url from 'url';
-import md5 from 'md5';
+import url from 'url'
+import md5 from 'md5'
 
 const execute = (bot, msg, match) => {
   const query = match.input.replace('MD5', 'md5').split('md5 ')[1]
@@ -9,4 +9,4 @@ const execute = (bot, msg, match) => {
 
 export default {
   execute
-};
+}

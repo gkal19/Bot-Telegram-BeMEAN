@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 // Criação do Schema
@@ -47,4 +47,4 @@ const Controller = {
   }
 }
 
-export default Controller;
+export default Controller

@@ -1,4 +1,4 @@
-import request from 'request';
+import request from 'request'
 const API_URLS = {
   exact: 'http://www.omdbapi.com/?plot=short&r=json&t=',
   search: 'http://www.omdbapi.com/?plot=short&r=json&s=',
@@ -13,7 +13,7 @@ const MESSAGES = {
 
 const IMDB_URL = 'http://www.imdb.com/title/'
 
-import s from '../settings';
+import s from '../settings'
 
 const execute = (bot, msg, match, forceSearch, id) => {
   s.get(msg.chat.id, 'search', (err, data) => {
@@ -106,4 +106,4 @@ const _respond = (bot, msg, info, force) => {
 export default {
   execute,
   _findInfo
-};
+}

@@ -1,5 +1,5 @@
-import fs from 'fs';
-import execSync from 'exec-sync';
+import fs from 'fs'
+import execSync from 'exec-sync'
 
 const execute = (bot, msg) => {
   const _txt = msg.text.replace(/['"\\]/g, '')
@@ -9,4 +9,4 @@ const execute = (bot, msg) => {
 
 export default {
   execute
-};
+}

@@ -1,5 +1,5 @@
-import url from 'url';
-import https from 'https';
+import url from 'url'
+import https from 'https'
 
 const execute = (bot, msg) => {
   const commmand = 'js'
@@ -11,4 +11,4 @@ const execute = (bot, msg) => {
 
 export default {
   execute
-};
+}

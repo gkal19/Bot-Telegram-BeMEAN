@@ -1,7 +1,7 @@
 const _eval = 'map'
-import {isInputOK as isOk} from '../utils/regexutils';
-import safeEval from 'sewe';
-import s from '../settings';
+import {isInputOK as isOk} from '../utils/regexutils'
+import safeEval from 'sewe'
+import s from '../settings'
 
 const execute = (bot, msg) => {
   if (s.getGlobal('evals', (err, data) => {
@@ -20,4 +20,4 @@ const execute = (bot, msg) => {
 
 export default {
   execute
-};
+}

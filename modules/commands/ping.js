@@ -3,4 +3,4 @@ const execute = (msg, match, bot) => bot.sendMessage(msg.chat.id, 'pong').catch(
 export default {
   'execute': execute,
   'numParams': 0
-};
+}

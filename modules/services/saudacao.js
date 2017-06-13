@@ -3,7 +3,7 @@ const messages = {
   'wrongPeriod': 'B%ao% %pu%, jovem? Agora são %horas%h%minutos%! Você devia regular seus horários!'
 }
 
-import s from '../settings';
+import s from '../settings'
 
 const execute = (bot, msg, match) => {
   s.get(msg.chat.id, 'greetings', (err, data) => {
@@ -35,4 +35,4 @@ const execute = (bot, msg, match) => {
 
 export default {
   execute
-};
+}

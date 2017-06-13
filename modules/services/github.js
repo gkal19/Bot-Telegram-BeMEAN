@@ -1,8 +1,8 @@
 // Requires
-import request from 'request';
+import request from 'request'
 
-import duckduckgo from './duckduckgo';
-import cheerioAdv from 'cheerio-advanced-selectors';
+import duckduckgo from './duckduckgo'
+import cheerioAdv from 'cheerio-advanced-selectors'
 const cheerio = cheerioAdv.wrap(require('cheerio'))
 
 // Strings
@@ -48,7 +48,7 @@ const parseResponse = (err, res, html, args, bot, msg, _url) => {
           'link': $('.main-content h3.repo-list-name').text()
         }
 
-        const answer = answers.quickDef;
+        const answer = answers.quickDef
         const _return = `Via Github: "${answer.replace(/\[[^]]*]/, '')}". fonte: ${_url}`
 
         bot.sendMessage(msg.chat.id, _return, pm).catch(console.log)
@@ -73,8 +73,8 @@ const execute = (bot, msg, args) => {
   } catch (e) {
     bot.sendMessage(msg.chat.id, messages.communicationError.replace('%e%', e), pm).catch(console.log)
   }
-};
+}
 
 export default {
   execute
-};
+}

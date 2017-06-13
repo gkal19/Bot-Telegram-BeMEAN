@@ -1,5 +1,5 @@
-import treta from '../db/treta';
-import monitutils from '../utils/monitutils';
+import treta from '../db/treta'
+import monitutils from '../utils/monitutils'
 
 const limite = 3
 const risadas = [
@@ -10,7 +10,7 @@ const risadas = [
   'ri litros ahuah'
 ]
 
-import s from '../settings';
+import s from '../settings'
 
 let contadores = []
 
@@ -41,4 +41,4 @@ const _execute = (bot, msg) => {
 
 export default {
   execute
-};
+}

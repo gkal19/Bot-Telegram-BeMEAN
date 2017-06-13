@@ -1,6 +1,6 @@
 const sticker = 'BQADAQADEwADt-CfBI-cLGYwa_u3Ag'
 
-import s from '../settings';
+import s from '../settings'
 
 const execute = (bot, msg) => {
   const reply = { 'reply_to_message_id': msg.message_id }
@@ -11,4 +11,4 @@ const execute = (bot, msg) => {
 
 export default {
   execute
-};
+}

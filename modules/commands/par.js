@@ -8,4 +8,4 @@ const execute = (msg, match, bot) => {
 export default {
   'execute': execute,
   'numParams': 0
-};
+}

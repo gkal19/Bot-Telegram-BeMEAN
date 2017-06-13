@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
-import moment from 'moment';
-import pj from 'prettyjson';
+import mongoose from 'mongoose'
+import moment from 'moment'
+import pj from 'prettyjson'
 
 const Schema = mongoose.Schema
 // Criação do Schema
@@ -59,4 +59,4 @@ const Controller = {
   }
 }
 
-export default Controller;
+export default Controller

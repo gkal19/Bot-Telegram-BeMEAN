@@ -1,6 +1,6 @@
-import s from '../settings';
-import url from 'url';
-import http from 'http';
+import s from '../settings'
+import url from 'url'
+import http from 'http'
 const parse = { 'parse_mode': 'HTML' }
 const stickers = [
   'BQADBAADMgEAAl6A9AWiXNcdh4N2fgI',
@@ -53,4 +53,4 @@ const execute = (bot, msg, match) => {
 
 export default {
   execute
-};
+}

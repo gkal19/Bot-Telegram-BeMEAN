@@ -1,6 +1,6 @@
-import url from 'url';
-import https from 'https';
-import cheerioAdv from 'cheerio-advanced-selectors';
+import url from 'url'
+import https from 'https'
+import cheerioAdv from 'cheerio-advanced-selectors'
 const cheerio = cheerioAdv.wrap(require('cheerio'))
 const parse = { 'parse_mode': 'HTML' }
 const execute = (bot, msg) => {
@@ -36,4 +36,4 @@ const execute = (bot, msg) => {
 
 export default {
   execute
-};
+}

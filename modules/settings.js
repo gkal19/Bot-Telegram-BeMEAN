@@ -1,4 +1,4 @@
-import {setting as s} from './db';
+import {setting as s} from './db'
 
 const configs = {
   stickers: { default: 'true', vals: ['true', 'false'] },
@@ -127,4 +127,4 @@ export default {
   getGlobal,
   setGlobal,
   clearGlobal
-};
+}

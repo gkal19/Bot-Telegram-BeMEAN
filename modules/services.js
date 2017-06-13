@@ -1,31 +1,31 @@
-import evalDate from './services/eval-date';
-import evalFilter from './services/eval-filter';
-import evalMap from './services/eval-map';
-import evalReduce from './services/eval-reduce';
-import evalTest from './services/eval-test';
-import wikipedia from './services/wikipedia';
-import maconha from './services/maconha';
-import risada from './services/risada';
-import gmaps from './services/gmaps';
-import mdn from './services/mdn';
-import md5 from './services/md5';
-import saudacao from './services/saudacao';
-import masem from './services/masem';
-import tuamae from './services/tuamae';
-import elogio from './services/elogio';
-import gme from './services/gme';
-import npm from './services/npm';
-import stickerHeart from './services/sticker-heart';
-import stickerHappy from './services/sticker-happy';
-import stickerWebschool from './services/sticker-webschool';
-import stickerBemean from './services/sticker-bemean';
-import omdb from './services/omdb';
-import whereami from './services/whereami';
-import config from './services/config';
-import zoeiro from './services/zoeiro';
-import entrar from './services/entrar';
-import sair from './services/sair';
-import qualeagiria from './services/qualeagiria';
+import evalDate from './services/eval-date'
+import evalFilter from './services/eval-filter'
+import evalMap from './services/eval-map'
+import evalReduce from './services/eval-reduce'
+import evalTest from './services/eval-test'
+import wikipedia from './services/wikipedia'
+import maconha from './services/maconha'
+import risada from './services/risada'
+import gmaps from './services/gmaps'
+import mdn from './services/mdn'
+import md5 from './services/md5'
+import saudacao from './services/saudacao'
+import masem from './services/masem'
+import tuamae from './services/tuamae'
+import elogio from './services/elogio'
+import gme from './services/gme'
+import npm from './services/npm'
+import stickerHeart from './services/sticker-heart'
+import stickerHappy from './services/sticker-happy'
+import stickerWebschool from './services/sticker-webschool'
+import stickerBemean from './services/sticker-bemean'
+import omdb from './services/omdb'
+import whereami from './services/whereami'
+import config from './services/config'
+import zoeiro from './services/zoeiro'
+import entrar from './services/entrar'
+import sair from './services/sair'
+import qualeagiria from './services/qualeagiria'
 
 const services = {
   wikipedia,
@@ -230,4 +230,4 @@ export default {
   sair,
   qualeagiria,
   defs
-};
+}

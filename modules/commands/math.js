@@ -1,4 +1,4 @@
-import math from 'mathjs';
+import math from 'mathjs'
 
 const execute = (msg, match, bot) => {
   if (match[1]) {
@@ -14,4 +14,4 @@ const execute = (msg, match, bot) => {
 export default {
   execute,
   numParams: 1
-};
+}

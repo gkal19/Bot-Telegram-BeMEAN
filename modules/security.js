@@ -1,6 +1,6 @@
-import regexutils from './utils/regexutils';
-import userutils from './utils/userutils';
-import monitutils from './utils/monitutils';
+import regexutils from './utils/regexutils'
+import userutils from './utils/userutils'
+import monitutils from './utils/monitutils'
 
 /* const isSecure = (msg, isEval, cbk) => {
   const secure = true;
@@ -21,4 +21,4 @@ const isSecure = (msg, isEval, cbk) => cbk(true)
 
 export default {
   isSecure
-};
+}

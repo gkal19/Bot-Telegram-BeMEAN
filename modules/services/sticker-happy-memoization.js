@@ -5,7 +5,7 @@ const stickers = [
   'BQADAgADgwEAAksODwABss0TWyMJO_YC'
 ]
 
-import s from '../settings';
+import s from '../settings'
 
 let counter = 0
 let memoization = []
@@ -39,4 +39,4 @@ const execute = (bot, msg) => {
 
 export default {
   execute
-};
+}

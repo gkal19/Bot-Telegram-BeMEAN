@@ -16,4 +16,4 @@ const execute = (msg, match, bot) => {
 export default {
   execute,
   'numParams': 1
-};
+}

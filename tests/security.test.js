@@ -1,5 +1,5 @@
-import {expect} from 'chai';
-import s from '../modules/security';
+import {expect} from 'chai'
+import s from '../modules/security'
 
 describe('Segurança', () => {
   describe('Filtrar mensagens maliciosas, apenas se forem eval', () => {

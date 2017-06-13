@@ -1,4 +1,4 @@
-import userutils from '../utils/userutils';
+import userutils from '../utils/userutils'
 
 const execute = (msg, match, bot) => {
   userutils.getUserCount((err, data) => {
@@ -13,4 +13,4 @@ const execute = (msg, match, bot) => {
 export default {
   'execute': execute,
   'numParams': 0
-};
+}

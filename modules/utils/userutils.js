@@ -1,5 +1,5 @@
-import {user as users} from '../db';
-import monitutils from './monitutils';
+import {user as users} from '../db'
+import monitutils from './monitutils'
 const callback = (err, data) => {
   if (err) console.log('Erro no banco: ', err)
   else console.log('Retorno do banco: ', data.result || data)
@@ -107,4 +107,4 @@ export default {
   isUserBlacklisted,
   getUserCount,
   getUsers
-};
+}

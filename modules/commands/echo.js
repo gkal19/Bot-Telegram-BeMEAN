@@ -5,4 +5,4 @@ const execute = (msg, match, bot) => bot.sendMessage(msg.chat.id, msg.text.repla
 export default {
   'execute': execute,
   'numParams': 1
-};
+}

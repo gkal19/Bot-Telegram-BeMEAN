@@ -17,7 +17,7 @@ const stickers = [
   'BQADAQAD0wADREz9A2AB4VDafSQNAg'
 ]
 
-import s from '../settings';
+import s from '../settings'
 
 const execute = (bot, msg) => {
   s.get(msg.chat.id, 'funny', (err, data) => {
@@ -34,4 +34,4 @@ const _execute = (bot, msg) => {
 
 export default {
   execute
-};
+}

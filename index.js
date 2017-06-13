@@ -1,4 +1,3 @@
-if (process.env.envfile !== 'n') require('dotenv').config()
 import TelegramBot from 'node-telegram-bot-api'
 import commands from './modules/commands'
 import services from './modules/services'
@@ -9,6 +8,8 @@ import treta from './modules/db/treta'
 import message from './modules/db/message'
 import s from './modules/settings'
 import fs from 'fs'
+
+if (process.env.envfile !== 'n') require('dotenv').config()
 
 const globalLock = process.env.lock
 const _services = services.defs
@@ -56,7 +57,8 @@ bot
 
 const takeOff = () => {
   // Handling previous crash
-  let crashdata, processing
+  let crashdata
+  let processing
 
   if (fs.existsSync('./.crash')) {
     let _data = JSON.parse(fs.readFileSync('./.crash'))
@@ -105,7 +107,7 @@ const takeOff = () => {
     if (!globalLock) {
       processing = msg
       if (!crashdata || msg !== crashdata.msg) {
-        if (match[3] && match[3] === username || !match[3]) {
+        if (match[3] || match[3] === username || !match[3]) {
           let command = match[1]
           if (command) {
             if (command in commands) {
@@ -148,7 +150,7 @@ const takeOff = () => {
                 _services.forEach((element, index) => {
                   if (_services[index].regex.test(msg.text)) {
                     recognized = true
-                    const _match = msg.text.match(_services[index].regex);
+                    const _match = msg.text.match(_services[index].regex)
                     const service = _services[index]
                     security.isSecure(msg, service.eval, secure => {
                       if (secure) {

@@ -1,5 +1,5 @@
-import request from 'request';
-import s from '../settings';
+import request from 'request'
+import s from '../settings'
 const pm = {'parse_mode': 'Markdown'}
 
 const API_URL = 'http://www.qualeagiria.com.br/giria_telegram/?giria='
@@ -10,7 +10,7 @@ const messages = {
   communicationError: 'Putz, não tô conseguindo conversar com o Qual é a Gíria :/ Tenta depois ```%e%```'
 }
 
-import wikipedia from './wikipedia';
+import wikipedia from './wikipedia'
 
 const parseResponse = (err, res, html, args, bot, msg) => {
   let answer
@@ -67,4 +67,4 @@ const execute = (bot, msg, args) => {
 
 export default {
   execute
-};
+}

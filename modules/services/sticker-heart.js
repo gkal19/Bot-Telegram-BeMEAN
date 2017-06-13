@@ -1,4 +1,4 @@
-import s from '../settings';
+import s from '../settings'
 
 const stickers = [
   'BQADAgADVgADGgZFBFCh0QP4JfyUAg',
@@ -20,4 +20,4 @@ const execute = (bot, msg) => {
 
 export default {
   execute
-};
+}

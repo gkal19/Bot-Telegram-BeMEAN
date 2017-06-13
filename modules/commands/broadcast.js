@@ -1,6 +1,6 @@
-import treta from '../db/treta';
-import userutils from '../utils/userutils';
-import monitutils from '../utils/monitutils';
+import treta from '../db/treta'
+import userutils from '../utils/userutils'
+import monitutils from '../utils/monitutils'
 
 const sendUse = (bot, msg) => {
   bot.sendMessage(msg.chat.id, 'Uso: `/broadcast users|groups|all`', {
@@ -46,8 +46,8 @@ const execute = (msg, match, bot) => {
 const doBroadcast = (ids, bot, msg) => {
   if (Array.isArray(ids)) {
     if (msg.reply_to_message) {
-      const tfw = msg.reply_to_message;
-      const sent = [];
+      const tfw = msg.reply_to_message
+      const sent = []
       bot.sendMessage(msg.chat.id, `Enviando mensagem para: ${ids.length} conversas`).catch(console.log)
                 .then(() => {
                   ids.forEach((id) => {
@@ -91,4 +91,4 @@ export default {
   execute,
   numParams: 1,
   fillUsers
-};
+}

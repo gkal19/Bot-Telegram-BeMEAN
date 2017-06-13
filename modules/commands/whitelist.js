@@ -1,5 +1,5 @@
-import userutils from '../utils/userutils';
-import monitutils from '../utils/monitutils';
+import userutils from '../utils/userutils'
+import monitutils from '../utils/monitutils'
 
 const execute = (msg, match, bot) => {
   const user_id = msg.reply_to_message.from.id
@@ -21,4 +21,4 @@ const execute = (msg, match, bot) => {
 export default {
   'execute': execute,
   'numParams': 1
-};
+}

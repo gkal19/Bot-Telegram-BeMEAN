@@ -23,4 +23,4 @@ const isInputOK = (input) => {
 export default {
   regex,
   isInputOK
-};
+}

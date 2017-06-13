@@ -1,4 +1,4 @@
-import url from 'url';
+import url from 'url'
 
 const execute = (bot, msg) => {
   const cmd = msg.text.replace(/gme /ig, '')
@@ -8,4 +8,4 @@ const execute = (bot, msg) => {
 
 export default {
   execute
-};
+}

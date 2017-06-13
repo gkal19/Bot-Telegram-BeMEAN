@@ -5,11 +5,11 @@ const answers = [
   'Welcome, bitch :P',
   'Aooooooooo fio! Bem vindo :D',
   'Eaeeeeeeeeeee xD',
-  'Olaaaar ^^',	
+  'Olaaaar ^^',
   'Ih, alá, chegou mais um! Bem vindo :D'
 ]
 
-import s from '../settings';
+import s from '../settings'
 
 const execute = (bot, msg) => {
   s.get(msg.chat.id, 'funny', (err, data) => {
@@ -23,4 +23,4 @@ const _execute = (bot, msg) => {
 
 export default {
   execute
-};
+}

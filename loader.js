@@ -6,7 +6,7 @@ const _load = match => {
         _services.forEach((element, index) => {
           if (_services[index].regex.test(msg.text)) {
             recognized = true
-            const _match = msg.text.match(_services[index].regex)
+            var _match = msg.text.match(_services[index].regex)
             const service = _services[index]
             security.isSecure(msg, service.eval, secure => {
               if (secure) {
@@ -17,7 +17,7 @@ const _load = match => {
                   if (!status) {
                     userutils.blacklistUser(
                       msg.from.id,
-                      `Eval malicioso: \`${msg.text}\``,
+                      'Eval malicioso: `' + msg.text + '`',
                       err => {
                         if (!err) {
                           bot
@@ -41,7 +41,11 @@ const _load = match => {
                             .catch(console.log)
                           monitutils.notifySharedAccount(
                             bot,
-                            `Erro ao adicionar o user ${msg.from.id} à blacklist. err: \`${JSON.stringify(err)}\``
+                            'Erro ao adicionar o user ' +
+                              msg.from.id +
+                              ' à blacklist. err: `' +
+                              JSON.stringify(err) +
+                              '`'
                           )
                         }
                       }
@@ -107,4 +111,4 @@ const _load = match => {
   })
 }
 
-export default _load
+module.exports = _load

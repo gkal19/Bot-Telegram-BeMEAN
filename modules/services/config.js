@@ -1,5 +1,5 @@
-import s from '../settings';
-import mu from '../utils/monitutils';
+import s from '../settings'
+import mu from '../utils/monitutils'
 
 const isValidValue = (config, value) => {
   return (config in s.configs && (s.configs[config].vals.filter((v) => { return value == v }).length > 0))
@@ -124,4 +124,4 @@ const execute = (bot, msg, match) => {
 
 export default {
   execute
-};
+}
